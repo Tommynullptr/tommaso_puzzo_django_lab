@@ -8,8 +8,8 @@ class Migration(migrations.Migration):
 
     initial = True
 
-    dependencies = [
-    ]
+    dependencies = []  #TODO: add dependencies?
+                       #dependencies = [('store or migrations?', '0001_initial')]
 
     operations = [
         migrations.CreateModel(

@@ -37,4 +37,7 @@ class Wishlist(models.Model):
 
     listofproducts = models.ManyToManyField(Product)
     user = models.ForeignKey('User', on_delete=models.CASCADE, null=True)
+
+
+#TODO: alternative to manytomanyfield: add a field to the product model that is a list of users who have it in their cart and use a queryset
     
