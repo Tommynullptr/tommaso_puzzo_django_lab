@@ -33,9 +33,10 @@ class Cart(models.Model):
     user = models.ForeignKey('User', on_delete=models.CASCADE, null=True)
 
 
-class Wishlist(models.Model):
+class Order(models.Model):
 
     listofproducts = models.ManyToManyField(Product)
+    totalprice = models.FloatField()
     user = models.ForeignKey('User', on_delete=models.CASCADE, null=True)
 
 
