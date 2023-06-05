@@ -4,6 +4,7 @@ from django.views import View
 from django.views.generic import FormView, ListView, DetailView
 
 from store.models import Cart, Order, Product
+from store.forms import UserFormRegister, UserFormLogin
 
 
 # Create your views here.
@@ -13,7 +14,9 @@ def index(request):
     return HttpResponse("Hello, world. You're at the store index.")
 
 
-class UserView(FormView):
+class UserView(View): #TODO: make this view use the forms [check chatgpt]
+
+    template_name = 'user.html'
 
     def get(self, request):
 
@@ -64,6 +67,10 @@ class ProductView(DetailView):
     def get(self, request):
 
         return HttpResponse("Hello, world. You're at the store product.")
+
+    #def get(self, request, *args, **kwargs):
+        # Call the parent class's get() method to trigger the template rendering process
+        #return super().get(request, *args, **kwargs)
 
 
 
