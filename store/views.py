@@ -14,7 +14,7 @@ def index(request):
     return HttpResponse("Hello, world. You're at the store index.")
 
 
-class UserView(View): #TODO: make this view use the forms [check chatgpt]
+class UserView(View): #TODO: make this view use the forms [check chatgpt + slide-4 pag 23,26]
 
     template_name = 'user.html'
 
