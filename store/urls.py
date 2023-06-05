@@ -6,8 +6,8 @@ from . import views
 urlpatterns = [
     path("", index, name='home'),
     path("user/", index, name='user'),
-    path("cart/<char:username>/", index, name='cart'),
-    path("order/<char:username>/", index, name='order'),
+    path("cart/<str:username>/", index, name='cart'),
+    path("order/<str:username>/", index, name='order'),
     path("product/<int:id>", index, name='product'),
 ]
 
