@@ -1,6 +1,9 @@
 from django.db import models
+from django.contrib.auth.models import AbstractBaseUser, User
 
 # Create your models here.
+
+#TODO: CustomUserManager? [slide-5 pag 12]
 
 
 class Product(models.Model):
@@ -12,7 +15,7 @@ class Product(models.Model):
     image_url = models.CharField(max_length=2083)
 
 
-class User(models.Model):
+class CustomUser(models.Model, AbstractBaseUser):
 
     username = models.CharField(max_length=255, primary_key=True, unique=True)
     firstname = models.CharField(max_length=255)
@@ -21,9 +24,9 @@ class User(models.Model):
     address = models.CharField(max_length=255)
     city = models.CharField(max_length=255)
     state = models.CharField(max_length=255)
+    USERNAME_FIELD = 'username'
     #should own a cart
     #cart = models.ForeignKey('Cart', on_delete=models.CASCADE, null=True)
-
 
 class Cart(models.Model):
 
